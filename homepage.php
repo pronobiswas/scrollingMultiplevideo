@@ -108,122 +108,73 @@ get_header(); ?>
                 markers: true,
             }
         });
-        const scrubObjs = [{
-                currentTime: 0.0
-            },
-            {
-                currentTime: 0.0
-            },
-            {
-                currentTime: 0.0
-            },
-            {
-                currentTime: 0.0
-            }
+        const scrubObjs = [
+            {currentTime: 0.0}, 
+            {currentTime: 0.0},
+            {currentTime: 0.0},
+            {currentTime: 0.0},
+            {currentTime: 0.0},
+            {currentTime: 0.0},
+            
         ];
-        // tl.to(videos[0], {
-        //         opacity: 1,
-        //         ease: "none",
-        //         duration: 0.1,
-        //     })
-        //     .to(scrubObjs[0], {
-        //         currentTime: videos[0].duration,
-        //         ease: "none",
-        //         duration: 1,
-        //         onUpdate: () => {
-        //             console.log("videos[1].duration", videos[1].duration);
-        //             videos[0].currentTime = scrubObjs[0].currentTime;
-        //             videos[0].opacity = 0;
-        //         }
-        //     })
-        //     .to(scrubObjs[0], {
-        //         opacity: 0,
-        //         ease: "none",
-        //         duration: 0.1,
-        //     })
-
-        //     .to(scrubObjs[1], {
-        //         currentTime: videos[1].duration,
-        //         ease: "none",
-        //         duration: 1,
-        //         onUpdate: () => {
-        //             videos[1].currentTime = scrubObjs[1].currentTime;
-        //         }
-        //     })
-
-        //     .to(scrubObjs[2], {
-        //         currentTime: videos[2].duration,
-        //         ease: "none",
-        //         duration: 1,
-        //         onUpdate: () => {
-        //             console.log("videos[2].duration", videos[2].duration);
-        //             videos[2].currentTime = scrubObjs[2].currentTime;
-        //         }
-        //     })
-
-
-
-
         videos.forEach(v => {
             v.pause();
             v.muted = true;
             v.style.position = "absolute";
             v.style.top = 0;
             v.style.left = 0;
-            v.style.width = "100%";
-            v.style.height = "100%";
-            v.style.objectFit = "cover";
             v.style.opacity = 0;
         });
 
-
-        // --- Play first video ---
         tl.set(videos[0], {
                 opacity: 1
-            }) // show
-            .to({}, { // empty object to act as timer
+            })
+            .to({}, {
                 duration: videos[0].duration,
                 onUpdate: () => {
                     videos[0].currentTime = gsap.utils.clamp(0, videos[0].duration, videos[0].currentTime +
                         0.016);
+                },
+                onComplete: () => {
+                    console.log("first video complete");
                 }
             })
             .to(videos[0], {
                 opacity: 0
-            }) // hide
+            }) 
 
-            // --- Play second video and move it left ---
             .set(videos[1], {
                 opacity: 1,
                 x: 0
-            }) // show
-            .to(videos[1], {
-                x: -200
-            }) // move to left
+            })
             .to({}, {
                 duration: videos[1].duration,
                 onUpdate: () => {
                     videos[1].currentTime = gsap.utils.clamp(0, videos[1].duration, videos[1].currentTime +
                         0.016);
+                },
+                onComplete: () => {
+                    console.log("second video complete");
                 }
             })
             .to(videos[1], {
                 opacity: 0
-            }) // hide
-
-            // --- Replay first video ---
-            .set(videos[0], {
+            })
+            .set(videos[2], {
                 opacity: 1,
                 x: 0
-            }) // show again
+            })
             .to({}, {
-                duration: videos[0].duration,
+                duration: videos[2].duration,
                 onUpdate: () => {
-                    videos[0].currentTime = gsap.utils.clamp(0, videos[0].duration, videos[0].currentTime +
+                    videos[2].currentTime = gsap.utils.clamp(0, videos[2].duration, videos[2].currentTime +
                         0.016);
+                },
+                onComplete: () => {
+                    console.log("third video complete");
                 }
             })
-            .to(videos[0], {
+            .to(videos[2], {
                 opacity: 0
             });
 

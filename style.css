@@ -103,7 +103,7 @@ Template: astra
   left: 0;
   width: 100%;
   height: 600px;
-  border: 4px solid red;
+  border: 1px solid red;
   z-index: 10;
 }
 #homepage-content #videoIntroductionSection #videoAnimationWrapper .videoAnimation {
@@ -118,13 +118,14 @@ Template: astra
   height: 100%;
   -o-object-fit: contain;
      object-fit: contain;
+  opacity: 0;
 }
 #homepage-content #videoIntroductionSection #textContentWrappper {
   position: relative;
   z-index: 20;
   width: 100%;
   height: 1200px;
-  border: 5px solid blue;
+  border: 1px solid blue;
   display: flex;
   justify-content: space-between;
 }
@@ -145,7 +146,7 @@ Template: astra
 #homepage-content #videoIntroductionSection #textContentWrappper .contentSecttion {
   width: 70%;
   height: 100%;
-  border: 2px dashed orange;
+  border: 1px dashed orange;
   display: flex;
   justify-content: space-between;
 }
@@ -156,4 +157,93 @@ Template: astra
 #homepage-content #videoIntroductionSection #textContentWrappper .contentSecttion p {
   width: 55%;
   font-family: "myfont2", sans-serif;
+}
+
+#homepage-content2 {
+  width: 100vw;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+#homepage-content2 #homepageBannerSection2 {
+  width: 100%;
+}
+#homepage-content2 #homepageBannerSection2 #homeBanner2 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+#homepage-content2 #homepageBannerSection2 #homeBanner2 .bannervideo2 {
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+}
+#homepage-content2 #homepageBannerSection2 #homeBanner2 .bannervideo2 video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#homepage-content2 #homepageBannerSection2 #homeBanner2 .bannerContent2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url("./assets/img/bannerOverlay.png");
+  background-size: cover;
+  background-position: center;
+  z-index: 5;
+}
+#homepage-content2 #homepageBannerSection2 #homeBanner2 .bannerContent2 h1 {
+  text-align: center;
+  font-family: "myfont1", sans-serif;
+  font-size: 56px;
+  margin-bottom: 50px;
+  font-weight: 500;
+}
+#homepage-content2 #homepageBannerSection2 #homeBanner2 .bannerContent2 h2 {
+  text-align: center;
+  font-family: "myfont2", sans-serif;
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 1.1;
+}
+#homepage-content2 #homepageBannerSection2 #homeBanner2 .bannerImage2 {
+  width: 100%;
+  height: 300px;
+  position: relative;
+}
+#homepage-content2 #homepageBannerSection2 #homeBanner2 .bannerImage2 img {
+  width: 100%;
+  max-width: 900px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+#homepage-content2 #videoIntroductionSection2 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-color: #F2F0EE;
+}
+#homepage-content2 #videoIntroductionSection2 #videoAnimationWrapper2 {
+  width: 100%;
+  height: 100%;
+}
+#homepage-content2 #videoIntroductionSection2 #videoAnimationWrapper2 .videoContainerX {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: aqua;
 }/*# sourceMappingURL=style.css.map */
