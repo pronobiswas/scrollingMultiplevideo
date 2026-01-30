@@ -23,3 +23,12 @@ function child_enqueue_styles() {
 }
 
 add_action( 'wp_enqueue_scripts', 'child_enqueue_styles', 15 );
+
+require get_stylesheet_directory() . '/inc/customizer/banner-section.php';
+require get_stylesheet_directory() . '/inc/customizer/scroll-content.php';
+
+
+
+// ============wp  customizetion=================
+
+// ============wp  customizetion=================
