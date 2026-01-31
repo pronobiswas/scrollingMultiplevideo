@@ -360,6 +360,10 @@ Template: astra
                             width: 100%;
                             .accordianList{
                                 width: 100%;
+                                display: flex;
+                                flex-direction: column;
+                                gap: 10px;
+                                list-style-type: none;
                                 .accordianItem{
                                     width: 100%;
                                     border: 1px solid transparent;
@@ -370,6 +374,12 @@ Template: astra
                                         padding: 10px 0;
                                         display: flex;
                                         justify-content: space-between; 
+                                        align-items: center;
+                                        h3{
+                                            font-size: 16px;
+                                            font-weight: 500;
+                                            text-transform: uppercase;
+                                        }
                                         .accordianIcon{
                                             display: block;
                                             width: 10px;
@@ -379,8 +389,7 @@ Template: astra
                                         }
                                     }
                                     .accordianContent{
-                                        width: 100%;
-                                        display: none;
+                                        max-height: 0; overflow: hidden; transition: max-height 0.3s ease;
                                     }
                                 }
                             }

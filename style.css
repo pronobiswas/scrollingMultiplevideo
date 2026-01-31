@@ -197,6 +197,10 @@ Template: astra
 }
 #homepage-content2 main#primary #scrollContentSection2 .scrollContentWrapper .contentSectionRight .rightTextContent .accordianWrapper .accordianList {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style-type: none;
 }
 #homepage-content2 main#primary #scrollContentSection2 .scrollContentWrapper .contentSectionRight .rightTextContent .accordianWrapper .accordianList .accordianItem {
   width: 100%;
@@ -209,6 +213,12 @@ Template: astra
   padding: 10px 0;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+#homepage-content2 main#primary #scrollContentSection2 .scrollContentWrapper .contentSectionRight .rightTextContent .accordianWrapper .accordianList .accordianItem .accordianTitle h3 {
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
 }
 #homepage-content2 main#primary #scrollContentSection2 .scrollContentWrapper .contentSectionRight .rightTextContent .accordianWrapper .accordianList .accordianItem .accordianTitle .accordianIcon {
   display: block;
@@ -218,6 +228,7 @@ Template: astra
   border-radius: 50%;
 }
 #homepage-content2 main#primary #scrollContentSection2 .scrollContentWrapper .contentSectionRight .rightTextContent .accordianWrapper .accordianList .accordianItem .accordianContent {
-  width: 100%;
-  display: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
 }/*# sourceMappingURL=style.css.map */

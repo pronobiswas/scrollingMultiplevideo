@@ -128,6 +128,24 @@ get_header(); ?>
                                         <p>Content for accordion item 1 goes here.</p>
                                     </div>
                                 </li>
+                                <li class="accordianItem">
+                                    <div class="accordianTitle">
+                                        <h3>Accordion Item 1</h3>
+                                        <span class="accordianIcon accordianIcon-red"></span>
+                                    </div>
+                                    <div class="accordianContent">
+                                        <p>Content for accordion item 1 goes here.</p>
+                                    </div>
+                                </li>
+                                <li class="accordianItem">
+                                    <div class="accordianTitle">
+                                        <h3>Accordion Item 1</h3>
+                                        <span class="accordianIcon accordianIcon-red"></span>
+                                    </div>
+                                    <div class="accordianContent">
+                                        <p>Content for accordion item 1 goes here.</p>
+                                    </div>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -273,4 +291,33 @@ get_header(); ?>
         });
     });
 })();
+
+const accordianItems = document.querySelectorAll('.accordianItem');
+let indicatorColors=['red','blue','green','yellow'];
+
+accordianItems.forEach((item, index) => {
+    const title = item.querySelector('.accordianTitle');
+    const content = item.querySelector('.accordianContent');
+    const accordianIcon = item.querySelector('.accordianIcon');
+    
+    
+
+    title.addEventListener('click', () => {
+        const isOpen = item.classList.contains('active');
+        accordianItems.forEach(i => {
+            i.classList.remove('active');
+            i.querySelector('.accordianContent').style.maxHeight = null;
+            i.querySelector('.accordianIcon').style.backgroundColor = 'gray';
+        });
+        if (!isOpen) {
+            item.classList.add('active');
+            content.style.maxHeight = content.scrollHeight + 'px';
+            accordianIcon.style.backgroundColor = `${indicatorColors[index]}`;
+        }
+    });
+});
+
+
+
+
 </script>
