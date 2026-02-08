@@ -22,6 +22,18 @@ function child_theme_setup() {
 add_action( 'after_setup_theme', 'child_theme_setup', 5 );
 
 
+function mytheme_register_menus() {
+    register_nav_menus(
+        array(
+            'primary-menu' => __( 'Primary Menu', 'astra-child' ),
+            'footer-menu'  => __( 'Footer Menu', 'astra-child' ),
+        )
+    );
+}
+add_action( 'init', 'mytheme_register_menus' );
+
+
+
 
 /**
  * Enqueue styles
