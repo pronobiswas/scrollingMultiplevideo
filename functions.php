@@ -22,6 +22,7 @@ function child_theme_setup() {
 add_action( 'after_setup_theme', 'child_theme_setup', 5 );
 
 
+
 function mytheme_register_menus() {
     register_nav_menus(
         array(

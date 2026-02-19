@@ -29,9 +29,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 
         <!-- =============================== -->
         <div id="header_main" class="header_main">
-            <div class="logo">
-                <?php if ( function_exists( 'the_custom_logo' ) ) { the_custom_logo(); } ?>
-            </div>
+            <a href="<?php echo esc_url(home_url('/')); ?>">
+                <div class="logo">
+                    <?php if ( function_exists( 'the_custom_logo' ) ) { the_custom_logo(); } ?>
+                </div>
+            </a>
             <div class="menu">
                 <?php
                     wp_nav_menu( array(

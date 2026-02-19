@@ -13,12 +13,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 ?>
-</body>
 <footer id="footer" class="site-footer" >
     <div class="site-footer-wrap">
         this is footer area
     </div>
 
 </footer>
+</body>
 
 <?php wp_footer(); ?>
