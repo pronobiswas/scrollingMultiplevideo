@@ -60,6 +60,12 @@ function child_enqueue_gsap_scripts() {
 		'3.13.0',
 		true 
 	); 
+    wp_enqueue_script( 
+		'gsap-SplitText', 
+		'https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/SplitText.min.js', array('gsap-core'), 
+		'3.13.0',
+		true 
+	); 
 } 
  add_action( 'wp_enqueue_scripts', 'child_enqueue_gsap_scripts' );
 // ===== Load Child Theme Scripts =====
@@ -87,3 +93,4 @@ add_action( 'wp_enqueue_scripts', 'child_enqueue_scripts' );
 require get_stylesheet_directory() . '/inc/customizer/banner-section.php';
 require get_stylesheet_directory() . '/inc/customizer/scroll-content.php';
 // ===dashboard content customizer====
+
